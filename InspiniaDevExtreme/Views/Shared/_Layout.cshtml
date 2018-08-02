@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewData["Title"] - .NET Core 2.1</title>
+    <!-- Add local styles, mostly for plugins css file -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/lib/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/devextreme/dx.common.css" rel="stylesheet" />
+
+    <link href="~/css/devextreme/dx.light.compact.css" rel="stylesheet" />
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/metisMenu/dist/metisMenu.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.js"></script>
+    <script src="~/lib/pace/pace.js"></script>
+    <script src="~/js/script.js"></script>
+
+    <script src="~/js/devextreme/cldr.js"></script>
+    <script src="~/js/devextreme/cldr/event.js"></script>
+    <script src="~/js/devextreme/cldr/supplemental.js"></script>
+    <script src="~/js/devextreme/cldr/unresolved.js"></script>
+
+    <script src="~/js/devextreme/globalize.js"></script>
+    <script src="~/js/devextreme/globalize/message.js"></script>
+    <script src="~/js/devextreme/globalize/number.js"></script>
+    <script src="~/js/devextreme/globalize/currency.js"></script>
+    <script src="~/js/devextreme/globalize/date.js"></script>
+
+    <script src="~/js/devextreme/dx.all.js"></script>
+    <script src="~/js/devextreme/vectormap-data/world.js"></script>
+    <script src="~/lib/devextreme-aspnet-data/js/dx.aspnet.data.js"></script>
+    <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+    @RenderSection("scripts", required: false)
+</head>
+
+<body>
+    <!-- Wrapper-->
+    <div id="wrapper" class="@Html.PageClass()">
+        <!-- Navigation -->
+        @await Html.PartialAsync("_Navigation")
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+            <!-- Top Navbar -->
+            @await Html.PartialAsync("_TopNavbar")
+            <!-- Main view  -->
+            @RenderBody()
+            <!-- Footer -->
+            @await Html.PartialAsync("_Footer")
+        </div>
+        <!-- End page wrapper-->
+    </div>
+    <!-- End wrapper-->
+</body>
+
+</html>
